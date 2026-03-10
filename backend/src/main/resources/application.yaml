@@ -1,0 +1,18 @@
+server:
+  port: 4000
+
+spring:
+  application:
+    name: task-manager-backend
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/taskdb}
+    username: ${SPRING_DATASOURCE_USERNAME:taskuser}
+    password: ${SPRING_DATASOURCE_PASSWORD:taskpass}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+springdoc:
+  packagesToScan: com.github.caitlinyih.taskmanager.controller
